@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+</head>
+<body>
+    <header>
+        <h1>Explore Cordova</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Cordova Map</h2>
+            <div id="map" style="height: 500px; width: 100%;"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cordova Tour Package System</p>
+    </footer>
+    <script>
+        function initMap() {
+            const cordova = { lat: 10.2518, lng: 123.9494 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: cordova,
+            });
+            new google.maps.Marker({
+                position: cordova,
+                map: map,
+                title: "Cordova",
+            });
+        }
+        window.onload = initMap;
+    </script>
+</body>
+</html>
